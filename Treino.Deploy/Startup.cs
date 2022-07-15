@@ -31,6 +31,9 @@ namespace Unidas.Deploy.Api
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
+            services.AddHealthChecks()
+                       .AddMongoDb(Configuration["MongoDBSettings:ConnectionString"]);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
